@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AHO MBA MVE Olivier - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            animation: fadeInDown 0.8s ease;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.1em;
+            color: #888;
+            font-style: italic;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 0.8s ease;
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 25px;
+            border-radius: 15px;
+            color: white;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .skill-category h3 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .skill-category li:last-child {
+            border-bottom: none;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .project-card {
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.2);
+            border-color: #764ba2;
+        }
+
+        .project-card h3 {
+            color: #667eea;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+
+        .project-card p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            color: white;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+        }
+
+        .contact-item:hover {
+            transform: scale(1.05);
+        }
+
+        .contact-icon {
+            font-size: 1.8em;
+            margin-right: 15px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .subtitle {
+                font-size: 1.1em;
+            }
+
+            header, .section {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AHO MBA MVE Olivier</h1>
+            <p class="subtitle">Ingénieur ISEN - M2 Projet et Affaires</p>
+            <p class="tagline">Spécialisé en Data Science & Data Finance | Passionné par l'analyse de données et les solutions innovantes</p>
+        </header>
+
+        <div class="section">
+            <h2>🎯 À Propos</h2>
+            <p style="font-size: 1.1em; line-height: 1.8; color: #555;">
+                Actuellement en Master 2 Projet et Affaires à l'ISEN Yncréa Ouest (Nantes), je recherche une <strong>alternance ou un stage de fin d'études</strong> dans le domaine de la data science, avec une spécialisation en finance. 
+                Fort d'une expérience en Business Intelligence chez BGFI Services (groupe bancaire africain), j'ai développé des tableaux de bord financiers avec Power BI et SAP BO, 
+                ainsi que des modèles prédictifs en Python pour l'analyse financière. Passionné par la transformation des données en insights actionnables, 
+                je souhaite contribuer à des projets data ambitieux dans le secteur financier.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>💼 Compétences Techniques</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>📊 Data Science & BI</h3>
+                    <ul>
+                        <li>Python (Pandas, NumPy, Scikit-learn)</li>
+                        <li>Machine Learning (LSTM, XGBoost)</li>
+                        <li>Power BI & SAP BusinessObjects</li>
+                        <li>SQL (MySQL, PostgreSQL)</li>
+                        <li>Analyse prédictive & statistique</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>💻 Développement Full-Stack</h3>
+                    <ul>
+                        <li>Laravel (PHP) & API REST</li>
+                        <li>React.js & JavaScript (ES6+)</li>
+                        <li>HTML5, CSS3, Tailwind CSS</li>
+                        <li>Python (Flask, Data Pipelines)</li>
+                        <li>R (analyse statistique)</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>🔧 Outils & Compétences</h3>
+                    <ul>
+                        <li>Gestion de projet Agile/Scrum</li>
+                        <li>Git & GitHub</li>
+                        <li>Docker, Excel/VBA</li>
+                        <li>Power Query & DAX</li>
+                        <li>Visualisation (Chart.js, Plotly)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🚀 Projets & Expériences</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>📊 Business Intelligence - BGFI Services</h3>
+                    <p><strong>Stage M1 | Juin - Sept 2025 | Libreville, Gabon</strong></p>
+                    <p>Développement d'un tableau de bord financier interactif pour le suivi des KPI (CA, bilan, compte de résultat). Création d'un modèle prédictif ML (R²>0.8) pour anticiper le chiffre d'affaires.</p>
+                    <div class="project-tags">
+                        <span class="tag">Power BI</span>
+                        <span class="tag">SAP BO</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">DAX</span>
+                        <span class="tag">Scikit-learn</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>💹 Crypto Analysis & Prediction Platform</h3>
+                    <p><strong>Projet personnel | 2024-2025</strong></p>
+                    <p>Plateforme d'analyse technique et prédiction des crypto-monnaies avec ML (LSTM, XGBoost). Collecte automatisée via API CoinGecko, analyse de 2190+ points de données sur 6 actifs, visualisations interactives avec Plotly.</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">TensorFlow</span>
+                        <span class="tag">API REST</span>
+                        <span class="tag">Jupyter</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>🛍️ Sensations Arda - E-commerce</h3>
+                    <p><strong>Projet M1 | 2024-2025</strong></p>
+                    <p>Plateforme e-commerce complète pour la vente de parfums. Interface client responsive avec panier, gestion stocks temps réel. Back-office admin avec dashboard statistiques, CRUD produits, exports CSV et notifications email automatiques.</p>
+                    <div class="project-tags">
+                        <span class="tag">Laravel</span>
+                        <span class="tag">PHP</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Tailwind CSS</span>
+                        <span class="tag">Chart.js</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>🌍 Sunu-Tos - Cartographie interactive</h3>
+                    <p><strong>Projet M1 | Janv - Avril 2025 | Dakar/Nantes</strong></p>
+                    <p>Plateforme web de cartographie avec données géospatiales. Front-end React.js avec cartes Leaflet.js, back-end Laravel avec API RESTful, base PostgreSQL/PostGIS pour la gestion des données géographiques.</p>
+                    <div class="project-tags">
+                        <span class="tag">React.js</span>
+                        <span class="tag">Laravel</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">Leaflet.js</span>
+                        <span class="tag">PostGIS</span>
+                        <span class="tag">API REST</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>🌳 Prédiction ML - Arbres urbains</h3>
+                    <p><strong>Projet scolaire | Mai - Juin 2024</strong></p>
+                    <p>Modèle de Machine Learning pour prédire l'âge, l'état et l'emplacement optimal des arbres en milieu urbain. Nettoyage et analyse de données avec R, développement du modèle en Python, interface web pour visualiser les prédictions.</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">R</span>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Data Analysis</span>
+                        <span class="tag">Web Interface</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎓 Formation</h2>
+            <div style="margin-top: 20px;">
+                <div style="margin-bottom: 25px; padding: 20px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); border-radius: 12px; border-left: 4px solid #667eea;">
+                    <h3 style="color: #667eea; margin-bottom: 10px;">Diplôme d'Ingénieur Généraliste dans le Numérique</h3>
+                    <p style="font-weight: bold; margin-bottom: 8px;">ISEN Yncréa Ouest, Nantes | 2021 - 2026</p>
+                    <p style="color: #666; line-height: 1.6;">Spécialisation M2 : Projet et Affaires</p>
+                    <p style="color: #666; line-height: 1.6;">Compétences acquises : Data Science, Business Intelligence, Machine Learning, Développement Full-Stack, Gestion de projet Agile</p>
+                </div>
+
+                <div style="padding: 20px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); border-radius: 12px; border-left: 4px solid #764ba2;">
+                    <h3 style="color: #764ba2; margin-bottom: 10px;">Baccalauréat Scientifique</h3>
+                    <p style="font-weight: bold; margin-bottom: 8px;">Juvénat du Sacré-Cœur, Libreville, Gabon | 2020 - 2021</p>
+                    <p style="color: #666; line-height: 1.6;">Formation scientifique solide avec spécialisation mathématiques et sciences</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🌍 Langues</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
+                <div style="padding: 20px; background: white; border: 2px solid #667eea; border-radius: 12px; text-align: center; transition: all 0.3s ease;">
+                    <h3 style="color: #667eea; font-size: 1.3em; margin-bottom: 10px;">🇫🇷 Français</h3>
+                    <p style="color: #666; font-weight: bold;">Langue maternelle</p>
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 8px; border-radius: 4px; margin-top: 10px;"></div>
+                </div>
+
+                <div style="padding: 20px; background: white; border: 2px solid #667eea; border-radius: 12px; text-align: center; transition: all 0.3s ease;">
+                    <h3 style="color: #667eea; font-size: 1.3em; margin-bottom: 10px;">🇬🇧 Anglais</h3>
+                    <p style="color: #666; font-weight: bold;">Niveau B2 (Intermédiaire avancé)</p>
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 70%, #e0e0e0 70%); height: 8px; border-radius: 4px; margin-top: 10px;"></div>
+                </div>
+
+                <div style="padding: 20px; background: white; border: 2px solid #667eea; border-radius: 12px; text-align: center; transition: all 0.3s ease;">
+                    <h3 style="color: #667eea; font-size: 1.3em; margin-bottom: 10px;">🇪🇸 Espagnol</h3>
+                    <p style="color: #666; font-weight: bold;">Niveau A2 (Élémentaire)</p>
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 40%, #e0e0e0 40%); height: 8px; border-radius: 4px; margin-top: 10px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📫 Contact</h2>
+            <p style="font-size: 1.1em; margin-bottom: 20px;">
+                Je suis disponible immédiatement pour discuter d'opportunités d'alternance ou de stage. N'hésitez pas à me contacter !
+            </p>
+            <div class="contact-info">
+                <a href="mailto:olivieraho12@gmail.com" class="contact-item">
+                    <span class="contact-icon">📧</span>
+                    <span>olivieraho12@gmail.com</span>
+                </a>
+                <a href="tel:+33766799005" class="contact-item">
+                    <span class="contact-icon">📱</span>
+                    <span>+33 7 66 79 90 05</span>
+                </a>
+                <a href="https://www.linkedin.com/in/olivier-aho-737618286/" target="_blank" class="contact-item">
+                    <span class="contact-icon">💼</span>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/Ekang1203" target="_blank" class="contact-item">
+                    <span class="contact-icon">💻</span>
+                    <span>GitHub</span>
+                </a>
+            </div>
+            <center>
+                <a href="mailto:olivieraho12@gmail.com" class="cta-button">📩 Me Contacter</a>
+            </center>
+        </div>
+    </div>
+</body>
+</html>

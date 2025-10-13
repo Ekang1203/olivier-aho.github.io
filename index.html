@@ -123,6 +123,7 @@
             padding: 25px;
             transition: all 0.3s ease;
             cursor: pointer;
+            position: relative;
         }
 
         .project-card:hover {
@@ -156,6 +157,31 @@
             padding: 5px 12px;
             border-radius: 20px;
             font-size: 0.85em;
+        }
+
+        .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: #764ba2;
         }
 
         .contact-info {
@@ -270,6 +296,7 @@
                         <li>Power BI & SAP BusinessObjects</li>
                         <li>SQL (MySQL, PostgreSQL)</li>
                         <li>Analyse prédictive & statistique</li>
+                        <li>Streamlit & Plotly</li>
                     </ul>
                 </div>
 
@@ -279,8 +306,9 @@
                         <li>Laravel (PHP) & API REST</li>
                         <li>React.js & JavaScript (ES6+)</li>
                         <li>HTML5, CSS3, Tailwind CSS</li>
-                        <li>Python (Flask, Data Pipelines)</li>
+                        <li>Python (Flask, Streamlit)</li>
                         <li>R (analyse statistique)</li>
+                        <li>SQLAlchemy ORM</li>
                     </ul>
                 </div>
 
@@ -292,6 +320,7 @@
                         <li>Docker, Excel/VBA</li>
                         <li>Power Query & DAX</li>
                         <li>Visualisation (Chart.js, Plotly)</li>
+                        <li>Cloud Deployment (Streamlit Cloud, Supabase)</li>
                     </ul>
                 </div>
             </div>
@@ -300,6 +329,25 @@
         <div class="section">
             <h2>🚀 Projets & Expériences</h2>
             <div class="projects-grid">
+                <div class="project-card">
+                    <span class="badge">🌟 NOUVEAU</span>
+                    <h3>💰 Finance Tracker Pro</h3>
+                    <p><strong>Application Full-Stack | Décembre 2024 - Janvier 2025</strong></p>
+                    <p>Application professionnelle de gestion financière avec authentification multi-utilisateurs, support FCFA et 9 devises, IA intégrée pour catégorisation automatique et détection d'anomalies. Dashboard interactif avec 8 types de graphiques Plotly, exports Excel/CSV, et système de budgets avec alertes automatiques.</p>
+                    <p><strong>Architecture moderne :</strong> Backend Python avec SQLAlchemy ORM, PostgreSQL (Supabase) en production, Machine Learning pour prévisions financières (régression linéaire, analyse de saisonnalité), déployé sur Streamlit Cloud.</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Streamlit</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">SQLAlchemy</span>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Plotly</span>
+                        <span class="tag">Supabase</span>
+                        <span class="tag">API REST</span>
+                    </div>
+                    <a href="https://finance-tracker-pro.streamlit.app" target="_blank" class="project-link">🔗 Voir l'application en ligne →</a>
+                </div>
+
                 <div class="project-card">
                     <h3>📊 Business Intelligence - BGFI Services</h3>
                     <p><strong>Stage M1 | Juin - Sept 2025 | Libreville, Gabon</strong></p>
@@ -441,6 +489,4 @@
         </div>
     </div>
 </body>
-
 </html>
-
